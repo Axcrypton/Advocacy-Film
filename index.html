@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Academic Integrity Advocacy</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -15,15 +17,23 @@
         <source src="EuthenicsSoundtrack.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- =================================
+    <!-- MUSIC BUTTON -->
+    <button class="music-button" onclick="toggleMusic()">
+        ♫ PLAY MUSIC
+    </button>
+
+
+    <!-- =========================
          HOMEPAGE
-    ================================== -->
+    ========================== -->
 
     <section id="home-screen" class="screen active">
 
-        <div class="hero-content">
+        <div class="home-overlay"></div>
 
-            <p class="eyebrow">AWARENESS • RESPONSIBILITY • HONESTY</p>
+        <div class="home-content">
+
+            <p class="eyebrow">A STUDENT ADVOCACY PRESENTATION</p>
 
             <h1>
                 ACADEMIC
@@ -32,14 +42,9 @@
 
             <div class="gold-line"></div>
 
-            <p class="hero-description">
-                Integrity is doing what is right, even when no one is watching.
-                Every decision we make reflects our values as students.
-            </p>
-
-            <p class="hero-subtitle">
-                A student advocacy presentation about honesty and responsibility
-                in academic life.
+            <p class="home-description">
+                Honesty is not just a rule to follow.
+                It is a responsibility we carry as learners.
             </p>
 
             <div class="topic-container">
@@ -66,67 +71,66 @@
 
             </div>
 
-            <button class="watch-button" onclick="startVideo()">
-                WATCH ADVOCACY VIDEO →
-            </button>
-
-            <button class="secondary-button" onclick="showCredits()">
-                VIEW CREDITS
-            </button>
-
-            <p class="hero-footer">
-                HONESTY IS THE FOUNDATION OF TRUE SUCCESS.
+            <p class="home-message">
+                Choose integrity. Choose honesty. Choose to do what is right.
             </p>
+
+            <div class="home-buttons">
+
+                <button class="watch-button" onclick="startVideo()">
+                    WATCH ADVOCACY VIDEO →
+                </button>
+
+                <button class="secondary-button" onclick="showCredits()">
+                    VIEW CREDITS
+                </button>
+
+            </div>
 
         </div>
 
     </section>
 
 
-    <!-- =================================
-         VIDEO SCREEN
-    ================================== -->
+    <!-- =========================
+         VIDEO SECTION
+    ========================== -->
 
     <section id="video-screen" class="screen">
 
-        <div class="video-content">
+        <div class="section-content">
 
-            <p class="eyebrow">OUR ADVOCACY PRESENTATION</p>
+            <p class="eyebrow">ACADEMIC INTEGRITY CAMPAIGN</p>
 
-            <h2>THE CHOICE IS YOURS.</h2>
+            <h2>OUR ADVOCACY VIDEO</h2>
 
             <div class="gold-line"></div>
 
-            <p class="video-description">
+            <p class="section-description">
                 Watch and reflect on the importance of academic integrity.
-                Let us build a learning environment founded on honesty,
-                fairness, and accountability.
             </p>
 
             <div id="video-container">
 
-                <video id="advocacy-video" controls playsinline preload="metadata">
-
-                    <source src="advocacy-video.mp4" type="video/mp4">
-
-                    Your browser does not support video playback.
-
-                </video>
+                <iframe
+                    id="advocacy-video"
+                    src="https://www.youtube.com/embed/YOUR_VIDEO_ID?enablejsapi=1&rel=0&playsinline=1"
+                    title="Academic Integrity Advocacy Video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
 
             </div>
 
-            <p id="duration-warning" hidden>
-                Reminder: This video is five minutes or shorter.
-            </p>
-
-            <p id="video-error" hidden>
-                The video could not be loaded. Please check your video filename.
+            <p id="video-error" class="video-error" hidden>
+                The video could not be loaded. Please check your internet connection.
             </p>
 
             <div class="video-buttons">
 
-                <button class="watch-button" onclick="toggleFullscreen()">
-                    VIEW FULLSCREEN
+                <button class="watch-button" onclick="replayAdvocacy()">
+                    ↻ WATCH AGAIN
                 </button>
 
                 <button class="secondary-button" onclick="showCredits()">
@@ -134,7 +138,7 @@
                 </button>
 
                 <button class="secondary-button" onclick="returnHome()">
-                    BACK TO HOME
+                    ← HOMEPAGE
                 </button>
 
             </div>
@@ -144,57 +148,31 @@
     </section>
 
 
-    <!-- =================================
-         CREDITS SCREEN
-    ================================== -->
+    <!-- =========================
+         CREDITS SECTION
+    ========================== -->
 
     <section id="credits-screen" class="screen">
 
+        <div class="credits-overlay"></div>
+
         <div class="credits-content">
 
-            <button class="music-button" onclick="toggleMusic()">
-                ♫ PLAY MUSIC
-            </button>
+            <p class="eyebrow">THE PEOPLE BEHIND THE PROJECT</p>
 
-            <header class="credits-header">
+            <h2>OUR CREDITS</h2>
 
-                <p class="eyebrow">THE PEOPLE BEHIND THE ADVOCACY</p>
+            <div class="gold-line"></div>
 
-                <h1>OUR CREDITS</h1>
-
-                <div class="gold-line"></div>
-
-                <p>
-                    This advocacy was made possible through the teamwork,
-                    dedication, and creativity of everyone involved.
-                </p>
-
-            </header>
-
-
-            <!-- SCHOOL PHOTO -->
-
-            <div class="credits-school">
-
-                <img
-                    src="BackgroundSchool.jpg"
-                    alt="School building"
-                    class="credits-school-photo"
-                >
-
-                <p class="school-caption">
-                    OUR SCHOOL • OUR COMMUNITY • OUR RESPONSIBILITY
-                </p>
-
-            </div>
+            <p class="section-description">
+                Every contribution made this advocacy possible.
+            </p>
 
 
             <!-- CHEATING -->
 
             <div class="credit-category">
-
-                <p class="category-number">01</p>
-                <h2>CHEATING</h2>
+                <h3>CHEATING</h3>
 
                 <div class="name-grid">
                     <p>Blas, Marian Joyce G.</p>
@@ -206,16 +184,13 @@
                     <p>Rustia, Rhod Andrei N.</p>
                     <p>Versibal, Janine Rein M.</p>
                 </div>
-
             </div>
 
 
             <!-- PLAGIARISM -->
 
             <div class="credit-category">
-
-                <p class="category-number">02</p>
-                <h2>PLAGIARISM</h2>
+                <h3>PLAGIARISM</h3>
 
                 <div class="name-grid">
                     <p>Ceniza, Jhonrey J.</p>
@@ -224,16 +199,13 @@
                     <p>Versibal, Janine Rein M.</p>
                     <p>Rustia, Rhod Andrei N.</p>
                 </div>
-
             </div>
 
 
             <!-- COLLUSION -->
 
             <div class="credit-category">
-
-                <p class="category-number">03</p>
-                <h2>COLLUSION / CHARACTERS</h2>
+                <h3>COLLUSION / CHARACTERS</h3>
 
                 <div class="name-grid">
                     <p>Almario, Kian Ralf S.</p>
@@ -242,49 +214,27 @@
                     <p>Drueco, Kyla Mae I.</p>
                     <p>Perez, Mark Lester N.</p>
                 </div>
-
             </div>
 
 
             <!-- INAPPROPRIATE PROXY -->
 
             <div class="credit-category">
-
-                <p class="category-number">04</p>
-                <h2>INAPPROPRIATE PROXY</h2>
+                <h3>INAPPROPRIATE PROXY</h3>
 
                 <div class="name-grid">
-
-                    <p>
-                        <span class="role-label">STUDENT 1</span>
-                        Cuya, Natchor Ardaniel Jr.
-                    </p>
-
-                    <p>
-                        <span class="role-label">STUDENT 2</span>
-                        Buenafe, John Roseuel B.
-                    </p>
-
-                    <p>
-                        <span class="role-label">STUDENT 3</span>
-                        Enero, Marc Jhierald M.
-                    </p>
-
-                    <p>
-                        <span class="role-label">STUDENT 4</span>
-                        Cruz, Paul Vincent B.
-                    </p>
-
+                    <p><strong>Student 1:</strong> Cuya, Natchor Ardaniel Jr.</p>
+                    <p><strong>Student 2:</strong> Buenafe, John Roseuel B.</p>
+                    <p><strong>Student 3:</strong> Enero, Marc Jhierald M.</p>
+                    <p><strong>Student 4:</strong> Cruz, Paul Vincent B.</p>
                 </div>
-
             </div>
 
 
             <!-- OTHER CHARACTERS -->
 
             <div class="credit-category">
-
-                <h2>OTHER CHARACTERS / GOOD STUDENTS</h2>
+                <h3>OTHER CHARACTERS / GOOD STUDENTS</h3>
 
                 <div class="name-grid">
                     <p>Morelos, Kimberly Fiona R.</p>
@@ -292,54 +242,39 @@
                     <p>Hardinan, Ashlyn Khime S.</p>
                     <p>Versibal, Janine Rein M.</p>
                 </div>
-
             </div>
 
 
-            <!-- PRINCIPAL AND TEACHER -->
+            <!-- DIRECTORS -->
 
-            <div class="production-grid">
+            <div class="credit-category">
+                <h3>DIRECTORS</h3>
 
-                <div class="production-card">
-                    <span class="role-label">PRINCIPAL / CO-DIRECTOR</span>
-                    <h3>Faustino, John Vincent J.</h3>
+                <div class="name-grid">
+                    <p><strong>Principal / Co-Director:</strong> Faustino, John Vincent J.</p>
+                    <p><strong>Teacher / Co-Director:</strong> Ocampo, Dhayemie Cean C.</p>
                 </div>
-
-                <div class="production-card">
-                    <span class="role-label">TEACHER / CO-DIRECTOR</span>
-                    <h3>Ocampo, Dhayemie Cean C.</h3>
-                </div>
-
             </div>
 
 
             <!-- SCRIPTWRITERS -->
 
             <div class="credit-category">
-
-                <h2>SCRIPTWRITERS</h2>
+                <h3>SCRIPTWRITERS</h3>
 
                 <div class="name-grid">
-
-                    <p>
-                        <span class="role-label">LEAD DIRECTOR</span>
-                        Baylon, Mike Steven A.
-                    </p>
-
+                    <p>Baylon, Mike Steven A. (Lead Director)</p>
                     <p>Siason, Zyra A.</p>
                     <p>Ocampo, Dhayemie Cean C.</p>
                     <p>Drueco, Kyla Mae I.</p>
-
                 </div>
-
             </div>
 
 
             <!-- EDITORS -->
 
             <div class="credit-category">
-
-                <h2>EDITORS</h2>
+                <h3>EDITORS</h3>
 
                 <div class="name-grid">
                     <p>Baylon, Mike Steven A.</p>
@@ -348,59 +283,69 @@
                     <p>Reofrir, Lance</p>
                     <p>Austria, Trish Arriane V.</p>
                 </div>
-
             </div>
 
 
             <!-- VIDEOGRAPHERS -->
 
             <div class="credit-category">
-
-                <h2>VIDEOGRAPHERS</h2>
+                <h3>VIDEOGRAPHERS</h3>
 
                 <div class="name-grid">
                     <p>Naval, Ace R.</p>
                     <p>Rustia, Rhod Andrei N.</p>
                 </div>
+            </div>
+
+
+            <!-- SCHOOL PHOTO -->
+
+            <div class="credits-school">
+                <img
+                    src="BackgroundSchool.jpe"
+                    alt="School building"
+                    class="credits-school-photo"
+                >
+            </div>
+
+
+            <div class="credits-ending">
+
+                <h2>THANK YOU!</h2>
+
+                <p>
+                    Academic integrity begins with us.
+                    Let honesty guide every action.
+                </p>
+
+                <p class="made-with">
+                    Made with dedication and integrity.
+                </p>
 
             </div>
 
 
-            <!-- FINAL MESSAGE -->
-
-            <footer class="credits-ending">
-
-                <p class="eyebrow">A MESSAGE TO REMEMBER</p>
-
-                <h2>INTEGRITY BEGINS WITH YOU.</h2>
-
-                <div class="gold-line"></div>
-
-                <p>
-                    Academic success means more when it is earned honestly.
-                    Choose to be fair. Choose to be responsible.
-                    Choose integrity.
-                </p>
-
-                <p class="ending-small">
-                    Thank you for watching our advocacy.
-                </p>
+            <div class="credits-buttons">
 
                 <button class="watch-button" onclick="replayAdvocacy()">
-                    WATCH AGAIN ↻
+                    ↻ WATCH AGAIN
                 </button>
 
                 <button class="secondary-button" onclick="returnHome()">
-                    BACK TO HOME
+                    ← RETURN TO HOMEPAGE
                 </button>
 
-            </footer>
+            </div>
 
         </div>
 
     </section>
 
 
+    <!-- YOUTUBE IFRAME API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+    <!-- WEBSITE JAVASCRIPT -->
     <script src="script.js"></script>
 
 </body>
